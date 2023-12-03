@@ -1,0 +1,77 @@
+﻿<Window x:Class="VetClinicApplication.EditPatientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edit Patient" Height="500" Width="600" MaxHeight="500" MaxWidth="600" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+        </Style>
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="Background" Value="#FF88A781"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Foreground" Value="#FF545F4E"/>
+
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="bgedit.png" Stretch="Fill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Edit Patient Information" Grid.ColumnSpan="2"  HorizontalAlignment="Center" Margin="0,0,0,10" Grid.Row="0"/>
+
+        <StackPanel Grid.Row="1"  HorizontalAlignment="Center" >
+            <TextBlock  Text="Name:" Height="30" Margin="0,0,10,0"/>
+            <TextBox Text="{Binding Patient.PatientName, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <TextBlock Text="Age:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Text="{Binding Patient.PatientAge, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <TextBlock Text="Contact information:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox Text="{Binding Patient.PatientOwnerContactNumber, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <TextBlock Text="Treatment:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox TextWrapping="Wrap" Text="{Binding Patient.PatientTreatment, UpdateSourceTrigger=PropertyChanged}" Height="30" Width="200"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <TextBlock Text="Disease history:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox TextWrapping="Wrap" Text="{Binding Patient.PatientLegend, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="50"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+            <Button Content="OK" Width="100" Margin="5" Click="OK_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

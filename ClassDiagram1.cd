@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="VetClinicApplication.AddPatientModel">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIJABIAAPAAIRGBAIgQAIEAQgMAQAAMAIAQGIAAKBAY=</HashCode>
+      <FileName>Models\AddPatientModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VetClinicApplication.EditPatientModel">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAAAAAAAAAAAEAAIAAAAAAAgAAAAAAAAAAAAAABCAQ=</HashCode>
+      <FileName>Models\EditPatientModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VetClinicApplication.PatientModel">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAQhCAYAAAAAEAAIAAAAASAAAAAACBAAEAAAAAAA=</HashCode>
+      <FileName>Models\PatientModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VetClinicApplication.MainViewModel">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CSAAAACIIAAQAAAAICAEAAAEgEAAAACABAAAABADIAA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VetClinicApplication.PatientViewModel">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAQhCAYAAAAAAIAIAAAAAyAAAAAACBAAEAAABCAA=</HashCode>
+      <FileName>ViewModels\PatientViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.186" />
+  </Class>
+  <Enum Name="VetClinicApplication.Gender">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Enums\Gender.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="VetClinicApplication.VetClinicDoctors">
+    <Position X="0.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAJAA=</HashCode>
+      <FileName>Enums\VetClinicDoctors.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
