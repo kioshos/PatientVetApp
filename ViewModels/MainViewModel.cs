@@ -112,7 +112,7 @@ namespace VetClinicApplication
             if (SelectedPatient != null)
             {
                 
-                EditPatientModel editViewModel = new EditPatientModel(SelectedPatient, () => { });
+                EditPatientViewModel editViewModel = new EditPatientViewModel(SelectedPatient, () => { });
                 EditPatientWindow editWindow = new EditPatientWindow();
 
                 editWindow.DataContext = editViewModel;

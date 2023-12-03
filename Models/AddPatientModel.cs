@@ -14,13 +14,13 @@ namespace VetClinicApplication
 {   /// <summary>
     /// Contains information about new added patients
     /// </summary>
-    public class AddPatientModel : INotifyPropertyChanged
+    public class AddPatientModel
     {
         private MainViewModel _mainViewModel;
-         private Action _closeAction;
-       
+        private Action _closeAction;
+
         #region Private properties
-        private Guid _newPatientID ;
+        private Guid _newPatientID;
         private string _newPatientName;
         private Gender _newPatientGender;
         private double _newPatientAge;
@@ -52,10 +52,10 @@ namespace VetClinicApplication
         public DateTime NewPatientAppointmentDate
         {
             get { return (DateTime)_selectedDate; }
-            set 
-            { 
-                _selectedDate = value; 
-                OnPropertyChanged(nameof(NewPatientAppointmentDate)); 
+            set
+            {
+                _selectedDate = value;
+                OnPropertyChanged(nameof(NewPatientAppointmentDate));
             }
         }
         public DateTime SelectedDate
@@ -68,18 +68,18 @@ namespace VetClinicApplication
 
             }
         }
-         public ObservableCollection<Gender> GenderValues
-         {
-              get { return _genderValues; }
-         set
-         {
-            if (!Equals(_genderValues, value))
+        public ObservableCollection<Gender> GenderValues
+        {
+            get { return _genderValues; }
+            set
             {
-                _genderValues = value;
-                OnPropertyChanged(nameof(GenderValues));
+                if (!Equals(_genderValues, value))
+                {
+                    _genderValues = value;
+                    OnPropertyChanged(nameof(GenderValues));
+                }
             }
-         }
-         }
+        }
         public ObservableCollection<VetClinicDoctors> DoctorsValues
         {
             get { return _doctorsValues; }
@@ -104,13 +104,13 @@ namespace VetClinicApplication
         public Gender NewPatientGender
         {
             get { return _newPatientGender; }
-            set 
-            { 
-                _newPatientGender = value; 
-                OnPropertyChanged(nameof(NewPatientGender)); 
+            set
+            {
+                _newPatientGender = value;
+                OnPropertyChanged(nameof(NewPatientGender));
             }
         }
-       public string NewPatientTreatment
+        public string NewPatientTreatment
         {
             get { return _newPatientTreatment; }
             set
@@ -199,7 +199,7 @@ namespace VetClinicApplication
         }
         #endregion
         public ICommand AddPatientCommand { get; private set; }
-       
+
         public AddPatientModel(MainViewModel mainViewModel, Action closeAction)
         {
             _mainViewModel = mainViewModel;
@@ -211,14 +211,14 @@ namespace VetClinicApplication
             GenderValues = new ObservableCollection<Gender>(Enum.GetValues(typeof(Gender)).Cast<Gender>());
             DoctorsValues = new ObservableCollection<VetClinicDoctors>(Enum.GetValues(typeof(VetClinicDoctors)).Cast<VetClinicDoctors>());
         }
-      
+
 
         // Add new patient
         private void AddPatient()
         {
-            
+
             PatientViewModel newPatient = new PatientViewModel
-            {   
+            {
                 PatientID = Guid.NewGuid(),
                 PatientAppointmentDate = NewPatientAppointmentDate,
                 PatientName = NewPatientName,
@@ -237,26 +237,27 @@ namespace VetClinicApplication
             };
 
             try
-            {   
+            {
                 if (newPatient.PatientName != null)
                 {
                     _mainViewModel.AddPatient(newPatient);
 
                     DataStorage.SaveData(_mainViewModel.Patients);
 
-                   
-                 ClearFields();
+
+                    ClearFields();
                 }
                 else
                 {
                     MessageBox.Show("A field cannot be empty");
                 }
             }
-            catch(Exception ex){
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
 
-           
+
         }
         #region Private Helper
         private void ClearFields()
@@ -269,7 +270,7 @@ namespace VetClinicApplication
             NewPatientDisease = string.Empty;
             NewPatientTreatment = string.Empty;
             NewPatientLegend = string.Empty;
-           
+
         }
         #endregion
         public event PropertyChangedEventHandler PropertyChanged;

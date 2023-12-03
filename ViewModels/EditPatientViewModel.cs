@@ -7,7 +7,7 @@ namespace VetClinicApplication
 {   /// <summary>
     /// Edit information about chosen patient
     /// </summary>
-    public class EditPatientModel : INotifyPropertyChanged
+    public class EditPatientViewModel : INotifyPropertyChanged
     {
         private PatientViewModel _patient;
         private Action _closeAction;
@@ -25,7 +25,7 @@ namespace VetClinicApplication
         public ICommand SaveChangesCommand { get; private set; }
         public ICommand CancelCommand { get; private set; }
 
-        public EditPatientModel(PatientViewModel patient, Action closeAction)
+        public EditPatientViewModel(PatientViewModel patient, Action closeAction)
         {
             _patient = patient ?? throw new ArgumentNullException(nameof(patient));
             _closeAction = closeAction;

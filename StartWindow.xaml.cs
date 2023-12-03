@@ -22,7 +22,7 @@ namespace VetClinicApplication
             }
             else
             {
-                MessageBox.Show("Невірний логін або пароль. Спробуйте ще раз.");
+                MessageBox.Show("Incorrect login or password. Try again");
             }
         }
     }
